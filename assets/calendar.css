@@ -1,0 +1,52 @@
+/* calendar: month tables, year sheets, date tools, print sheets */
+.lead{font-size:1.08rem;color:var(--soft)}
+input[type=date]{width:100%;min-height:46px;padding:10px 12px;font:inherit;font-size:1rem;color:var(--ink);background:var(--field);border:1px solid var(--field-line);border-radius:10px}
+.chk{display:flex;gap:10px;align-items:center;min-height:44px;margin-top:8px;font-weight:400;cursor:pointer}
+.chk input{width:22px;height:22px;flex:none;accent-color:var(--accent)}
+.finder .chips{margin:10px 0 0}
+.btn.sm,.chips a,.chips button{min-height:40px}
+code{font-family:var(--mono);font-size:.92em;background:var(--surface2);border-radius:5px;padding:1px 5px}
+.next{margin-top:26px}
+.grid a small{white-space:normal;text-align:right;max-width:55%}
+
+table.cal{width:100%;table-layout:fixed;border-collapse:collapse;font-size:.92rem;background:var(--surface)}
+table.cal caption{font:700 1rem var(--font-head);padding:6px 0;text-align:left;color:var(--ink)}
+table.cal th{position:static;background:none;text-align:center;padding:4px 0;font-size:.74rem;color:var(--soft);border-bottom:1px solid var(--line)}
+table.cal td{text-align:center;padding:5px 0;border:0;vertical-align:middle;border-radius:6px}
+table.cal td b{font-weight:500}
+table.cal .sun,table.cal th.sun{color:var(--bad)}
+table.cal td.hol{background:var(--surface2);box-shadow:inset 0 0 0 1px var(--accent)}
+table.cal td.hol b{font-weight:700;color:var(--accent)}
+table.cal td.now{outline:2px solid var(--focus);outline-offset:-2px}
+table.cal.big{font-size:1rem;border:1px solid var(--line)}
+table.cal.big caption{font-size:1.5rem;text-align:center;padding:10px 0}
+table.cal.big th{font-size:.9rem;padding:8px 0;border:1px solid var(--line);background:var(--surface2)}
+table.cal.big td{height:76px;vertical-align:top;text-align:left;padding:5px 7px;border:1px solid var(--line);border-radius:0}
+table.cal.big td b{font-size:1.05rem;font-weight:700}
+table.cal.big td small{display:block;font-size:.68rem;line-height:1.2;color:var(--accent);margin-top:2px;overflow-wrap:anywhere}
+table.cal.big td.e{background:var(--surface2);opacity:.5}
+@media (max-width:520px){table.cal.big td{height:58px;padding:3px 4px}table.cal.big td small{font-size:.58rem}}
+.year{display:grid;gap:14px 18px;grid-template-columns:repeat(auto-fill,minmax(min(100%,230px),1fr));margin:14px 0}
+.year table.cal{border:1px solid var(--line);border-radius:10px;padding:4px}
+.year table.cal caption a{color:inherit;text-decoration:none}.year table.cal caption a:hover{text-decoration:underline}
+.sheet{background:var(--surface);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin:16px 0}
+.sheet .ytitle{text-align:center;margin:0 0 6px;font-size:1.6rem}
+.notes{margin-top:14px}.notes i{display:block;border-bottom:1px solid var(--field-line);height:30px}
+.hl{list-style:none;padding:0;margin:12px 0 0;font-size:.94rem}.hl li{padding:3px 0}
+.monthnav{display:flex;gap:8px;flex-wrap:wrap;align-items:center;margin:10px 0}
+.key{display:flex;gap:14px;flex-wrap:wrap;font-size:.86rem;color:var(--soft);margin:8px 0}
+.key i{display:inline-block;width:14px;height:14px;border-radius:4px;vertical-align:-2px;margin-right:5px;background:var(--surface2);box-shadow:inset 0 0 0 1px var(--accent)}
+.key i.s{box-shadow:none;background:none;color:var(--bad);font-style:normal;font-weight:700;width:auto}
+.yr{display:inline-block;font-family:var(--mono);background:var(--surface2);border:1px solid var(--line);border-radius:8px;padding:2px 9px;margin:2px}
+td.num,th.num{text-align:right;white-space:nowrap}
+[lang=hi],[lang=pa]{font-family:'Noto Sans Devanagari','Noto Sans Gurmukhi','Nirmala UI','Mangal','Raavi',var(--font)}
+@media print{
+  .printpage .hero,.printpage .prose,.printpage .finder,.printpage .monthnav,.printpage .result,.printpage .next,.printpage .key,.btn,.toast{display:none!important}
+  .printpage .keep{display:block!important}
+  .sheet{border:0;padding:0;margin:0;background:#fff}
+  table.cal,table.cal.big{background:#fff;color:#000}
+  table.cal.big td{height:92px;border-color:#888}table.cal.big th{border-color:#888}
+  table.cal td.now{outline:0}
+  .year{grid-template-columns:repeat(3,1fr);gap:10px 14px}
+  @page{margin:12mm}
+}
