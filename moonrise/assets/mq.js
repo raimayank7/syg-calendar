@@ -1,0 +1,1 @@
+(function(){var q=document.getElementById('m-q'),l=document.getElementById('m-list');if(!q)return;var a=[].slice.call(l.children);q.addEventListener('input',function(){var v=q.value.toLowerCase().trim();a.forEach(function(li){li.style.display=!v||li.textContent.toLowerCase().indexOf(v)>-1?'':'none'})})})();

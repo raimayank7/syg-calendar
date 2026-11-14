@@ -1,0 +1,1 @@
+(function(){var f=document.querySelector('[data-filter]');if(!f)return;var rows=[].slice.call(document.querySelectorAll(f.getAttribute('data-filter')));f.addEventListener('input',function(){var q=f.value.trim().toLowerCase();rows.forEach(function(r){r.hidden=q&&r.textContent.toLowerCase().indexOf(q)<0})})})();
