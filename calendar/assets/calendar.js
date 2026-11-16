@@ -214,7 +214,7 @@
       var n = C.days(today, a), an = Math.abs(n), df = n >= 0 ? C.diff(today, a) : C.diff(a, today), label = name && $('#n-date').value === C.iso(a) ? name : 'that day';
       show(out, '<h2>' + (n === 0 ? 'It is today' : n > 0 ? pl(n, 'day') + ' to go' : pl(an, 'day') + ' ago') + '</h2>' + facts([['The date', C.long(a)], ['Counted from today', C.long(today)], ['In weeks', Math.floor(an / 7) + ' weeks and ' + pl(an % 7, 'day')],
         ['In months and days', pl(df.y * 12 + df.m, 'month') + ' and ' + pl(df.d, 'day')], ['Weekdays (Monday to Friday) in between', num(n > 0 ? C.workdays(C.addDays(today, 1), a, false).work : n < 0 ? C.workdays(C.addDays(a, 1), today, false).work : 0)],
-        ['Nights of sleep', n > 0 ? num(n) : '0']]) + '<div class="acts"><button class="btn sm" type="button" data-wa="' + S.esc((n > 0 ? an + ' days to go until ' : an + ' days since ') + (label === 'that day' ? C.long(a) : label + ' (' + C.long(a) + ')') + '. https://calendar.shareyourgroup.com/calendar/countdown/') + '">Send on WhatsApp</button></div>');
+        ['Nights of sleep', n > 0 ? num(n) : '0']]) + '<div class="acts"><button class="btn sm" type="button" data-wa="' + S.esc((n > 0 ? an + ' days to go until ' : an + ' days since ') + (label === 'that day' ? C.long(a) : label + ' (' + C.long(a) + ')') + '. http://calendar.shareyourgroup.com/countdown/') + '">Send on WhatsApp</button></div>');
     }
     $('#n-date').addEventListener('input', function () { name = ''; run(); }); run();
   })();
