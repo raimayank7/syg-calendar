@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: http://calendar.shareyourgroup.com/sitemap.xml
+Sitemap: https://calendar.shareyourgroup.com/sitemap.xml
