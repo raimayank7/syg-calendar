@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-hanukkah-75c362940e', SHELL = ["/hanukkah/assets/site.css?v=9cff45ef36", "/hanukkah/assets/site.js?v=38b96724e9", "/hanukkah/icons/logo-light.webp", "/hanukkah/icons/logo-dark.webp"];
+const CACHE = 'syg-m-hanukkah-581ccef9e8', SHELL = ["/hanukkah/assets/site.css?v=d60c1f9d8f", "/hanukkah/assets/site.js?v=38b96724e9", "/hanukkah/icons/logo-light.webp", "/hanukkah/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-hanukkah-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
