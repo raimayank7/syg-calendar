@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-seasons-5010c6a73a', SHELL = ["/seasons/assets/site.css?v=403176beac", "/seasons/assets/site.js?v=38b96724e9", "/seasons/icons/logo-light.webp", "/seasons/icons/logo-dark.webp"];
+const CACHE = 'syg-m-seasons-75c362940e', SHELL = ["/seasons/assets/site.css?v=9cff45ef36", "/seasons/assets/site.js?v=38b96724e9", "/seasons/icons/logo-light.webp", "/seasons/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-seasons-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
