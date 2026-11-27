@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-leapyear-581ccef9e8', SHELL = ["/leapyear/assets/site.css?v=d60c1f9d8f", "/leapyear/assets/site.js?v=38b96724e9", "/leapyear/icons/logo-light.webp", "/leapyear/icons/logo-dark.webp"];
+const CACHE = 'syg-m-leapyear-82edbd176f', SHELL = ["/leapyear/assets/site.css?v=36eb89c45d", "/leapyear/assets/site.js?v=9977d20129", "/leapyear/icons/logo-light.webp", "/leapyear/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-leapyear-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

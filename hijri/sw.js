@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-hijri-581ccef9e8', SHELL = ["/hijri/assets/site.css?v=d60c1f9d8f", "/hijri/assets/site.js?v=38b96724e9", "/hijri/icons/logo-light.webp", "/hijri/icons/logo-dark.webp"];
+const CACHE = 'syg-m-hijri-82edbd176f', SHELL = ["/hijri/assets/site.css?v=36eb89c45d", "/hijri/assets/site.js?v=9977d20129", "/hijri/icons/logo-light.webp", "/hijri/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-hijri-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

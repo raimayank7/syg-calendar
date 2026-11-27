@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-moonrise-581ccef9e8', SHELL = ["/moonrise/assets/site.css?v=d60c1f9d8f", "/moonrise/assets/site.js?v=38b96724e9", "/moonrise/icons/logo-light.webp", "/moonrise/icons/logo-dark.webp"];
+const CACHE = 'syg-m-moonrise-82edbd176f', SHELL = ["/moonrise/assets/site.css?v=36eb89c45d", "/moonrise/assets/site.js?v=9977d20129", "/moonrise/icons/logo-light.webp", "/moonrise/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-moonrise-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-thanksgiving-581ccef9e8', SHELL = ["/thanksgiving/assets/site.css?v=d60c1f9d8f", "/thanksgiving/assets/site.js?v=38b96724e9", "/thanksgiving/icons/logo-light.webp", "/thanksgiving/icons/logo-dark.webp"];
+const CACHE = 'syg-m-thanksgiving-82edbd176f', SHELL = ["/thanksgiving/assets/site.css?v=36eb89c45d", "/thanksgiving/assets/site.js?v=9977d20129", "/thanksgiving/icons/logo-light.webp", "/thanksgiving/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-thanksgiving-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {

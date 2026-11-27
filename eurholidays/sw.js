@@ -1,4 +1,4 @@
-const CACHE = 'syg-m-eurholidays-581ccef9e8', SHELL = ["/eurholidays/assets/site.css?v=d60c1f9d8f", "/eurholidays/assets/site.js?v=38b96724e9", "/eurholidays/icons/logo-light.webp", "/eurholidays/icons/logo-dark.webp"];
+const CACHE = 'syg-m-eurholidays-82edbd176f', SHELL = ["/eurholidays/assets/site.css?v=36eb89c45d", "/eurholidays/assets/site.js?v=9977d20129", "/eurholidays/icons/logo-light.webp", "/eurholidays/icons/logo-dark.webp"];
 self.addEventListener('install', e => { self.skipWaiting(); e.waitUntil(caches.open(CACHE).then(c => c.addAll(SHELL)).catch(() => {})); });
 self.addEventListener('activate', e => e.waitUntil(caches.keys().then(ks => Promise.all(ks.filter(k => k.indexOf('syg-m-eurholidays-') === 0 && k !== CACHE).map(k => caches.delete(k)))).then(() => self.clients.claim())));
 self.addEventListener('fetch', e => {
